@@ -603,3 +603,20 @@ function marra_register_therapists_post_type() {
 	register_post_type('therapists', $args);
 }
 add_action('init', 'marra_register_therapists_post_type');
+
+// Include ACF Fields
+$acf_fields = __DIR__ . '/inc/acf-fields.php';
+if ( is_readable( $acf_fields ) ) {
+	require_once $acf_fields;
+}
+
+// Register ACF Options Page
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+}
