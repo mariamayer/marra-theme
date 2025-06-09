@@ -169,6 +169,18 @@ img {
 
 /* Header */
 
+.top-banner-text {
+	color: var(--Claret, #411512);
+	text-align: center;
+	font-family: "Sofia Pro";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0.36px;
+}
+
+
 #header {
 	.search-form {
 		min-width: 250px;
@@ -194,7 +206,7 @@ img {
 /* Footer */
 
 #footer {
-	background-color: #fff;
+	background-color: var(--Claret, #411512);
 
 	p {
 		margin-top: 10px;
@@ -364,4 +376,52 @@ img {
 	#sidebar {
 		margin-top: 60px;
 	}
+}
+
+/* Split Menu Styles */
+.navbar-collapse {
+    width: 100%;
+}
+
+#left-menu,
+#right-menu {
+    display: flex;
+    align-items: center;
+}
+
+#left-menu {
+    justify-content: flex-start;
+}
+
+#right-menu {
+    justify-content: flex-end;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        flex-direction: column;
+    }
+    
+    #left-menu,
+    #right-menu {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .navbar-brand {
+        position: relative;
+        left: 0;
+        transform: none;
+        margin: 1rem 0;
+    }
+}
+
+:root {
+  --bs-body-bg: #FCF7ED;
 }
